@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+ 
+
+:root{
+  --main-background-color: #22253a;
+  --main-text-color: rgb(104, 104, 104);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+ font-family: "Poppins", sans-serif;
+ margin: 0;
+ background-color: var(--main-background-color);
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+form{
+    background-color: rgb(80, 68, 151);
+    width: 400px;
+    height: 300px;
+    border: none;
+    position: relative;
+    box-shadow: 0px 0px 3px 6px rgba(0, 0, 0, .1);
+    border-radius: 10px;
+}
+
+.calc-container{
+    background-color: white;
+    position: relative;
+    border-radius: 10px
+}
+
+/*homePriceLbl, downPaymentLbl, mortgageInterestRateLbl, loanTypeLbl*/
+.lbl{
+    color: var(--main-text-color);
+    font-size: 15px;
+    text-shadow: 1px 3px rgba(0, 0, 0, .1);
+    letter-spacing: 1px;
+    position: absolute;
+}
+
+.homePriceLbl{
+    top: 0;
+    left: 0;
+}
+
+.downPaymentLbl{
+    top: 50px;
+    left: 0;
+}
+
+.mortgageInterestRateLbl{
+    top: 100px;
+    left: 0;
+}
+
+.loanTypeLbl{
+    top: 150px;
+    left: 0;
+}
+/*homePriceInput, downPaymentInput, mortgageInterestRateInput, loanTypeInput*/
+
+.inpt{
+    border: none;
+    color: rgb(236, 223, 179);
+    letter-spacing: 1px;
+    position: absolute;
+    width: 100px;
+    background-color: transparent;
+}
+
+.inpt::placeholder{
+    color: rgb(236, 223, 179);
+    letter-spacing: 1px;
+}
+
+.inpt:focus{
+    outline: none;
+}
+
+.inpt:active{
+    outline: none;
+}
+
+.homePriceInput{
+    top: 0px;
+    left: 300px;
+}
+
+.downPaymentInput{
+    top: 50px;
+    left: 300px;
+}
+
+.mortgageInterestRateInput{
+    top: 100px;
+    left: 300px;
+}
+
+.loanTypeSelection{
+    position: absolute;
+    background-color: transparent;
+    font-size: 9px;
+    border: none;
+    color: rgb(236, 223, 179);
+    width: 100px;
+    top: 150px;
+    left: 300px;
+}
+
+.loanTypeSelection:hover{
+    background-color: black;
+}
+/* 
+.loanTypeInput{
+    top: 150px;
+    left: 300px;
+} */
+
+.calculate{
+    border: none;
+    background-color: transparent;
+    color: var(--main-text-color);
+    letter-spacing: 1px;
+    position: relative;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -95%);
+    mix-blend-mode: color;
+}
+
+.calculate::before{
+    top: -5px;
+    left: -5px;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgb(219, 45, 45);
+}
+
+.calculate::after{
+    bottom: -5px;
+    right: -5px;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 245);
+}
+
+
+
+.calculate:hover{
+    cursor: pointer;
+}

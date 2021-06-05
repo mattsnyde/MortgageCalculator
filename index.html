@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calc-container" id="calc-container">
+        <form action="" id = 'form' class = 'form'>
+            <label for="" class='lbl homePriceLbl' id='homePriceLbl'>Home Price</label>
+            <input type="text" id = 'homePriceInput' class = 'inpt homePriceInput' placeholder = '$0'>
+
+            <label for="" class="lbl downPaymentLbl" id='downPaymentLbl'>Down Payment</label>
+            <input type="text" id="downPaymentInput" class="inpt downPaymentInput" placeholder = '$0'>
+
+            <label for="" id='mortgageInterestRateLbl' class='lbl mortgageInterestRateLbl'>Mortgage Interest Rate</label>
+            <input type="text" class="inpt mortgageInterestRateInput" id="mortgageInterestRateInput" placeholder = '0%'>
+
+            <label for="" id="loanTypeLbl" class='lbl loanTypeLbl'>Loan Type</label>
+            <!-- <input type="text" class="inpt loanTypeInput" id="loanTypeInput" placeholder = '30 Year Fixed'> -->
+            <select name="" id="loanTypeSelection" class = 'loanTypeSelection'>
+                <option value="default" selected>Please Select One</option>
+                <option value="thirtyYears">30 years</option>
+                <option value="twentyYears">20 years</option>
+                <option value="fifteenYears">15 years</option>
+                <option value="tenYears">10 years</option>
+            </select>
+
+            <button class="calculate" id="calculate">Calculate</button>
+        </form>
+    </div>
+    <script src='script.js'></script>
+</body>
+</html>
