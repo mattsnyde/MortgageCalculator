@@ -29,8 +29,21 @@
                 <option value="fifteenYears">15 years</option>
                 <option value="tenYears">10 years</option>
             </select>
+            <label for="" id='monthlyPaymentLbl' class = 'lbl monthlyPaymentLbl'>Monthly Payment</label>
+            <input type="text" class = 'inpt monthlyPaymentInput' id='monthlyPaymentInput' placeholder = '$0' readonly>
+
+            <label for="" id="principalLbl" class="lbl principalLbl">Principal Amount...</label>
+            <input type="text" class="inpt principalInput" id="principalInput" placeholder = '$0' readonly>
+
+            <label for="" id="interestLbl" class="lbl interestLbl">Interest Amount...</label>
+            <input type="text" class="inpt interestInput" id="interestInput" placeholder = '$0' readonly>
 
             <button class="calculate" id="calculate">Calculate</button>
+            <div class="percentBar" id="percentBar"></div>
+            <div class="percentInterest" id="percentInterest"></div>
+            <div class="percentPrincipal" id="percentPrincipal"></div>
+
+            <div class="percentBox" id='percentBox'></div>
         </form>
     </div>
     <script src='script.js'></script>

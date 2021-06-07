@@ -13,7 +13,7 @@
 body {
  font-family: "Poppins", sans-serif;
  margin: 0;
- background-color: var(--main-background-color);
+ background-color: black;
  min-height: 100vh;
  display: flex;
  align-items: center;
@@ -21,9 +21,10 @@ body {
 }
 
 form{
-    background-color: rgb(80, 68, 151);
-    width: 400px;
-    height: 300px;
+    background-color: rgb(22, 20, 36);
+    width: 400px; 
+    height: 500px;
+ 
     border: none;
     position: relative;
     box-shadow: 0px 0px 3px 6px rgba(0, 0, 0, .1);
@@ -38,9 +39,9 @@ form{
 
 /*homePriceLbl, downPaymentLbl, mortgageInterestRateLbl, loanTypeLbl*/
 .lbl{
-    color: var(--main-text-color);
+    color: rgb(236, 223, 179);
     font-size: 15px;
-    text-shadow: 1px 3px rgba(0, 0, 0, .1);
+    text-shadow: 2px 1px rgba(236, 223, 179, .4);
     letter-spacing: 1px;
     position: absolute;
 }
@@ -64,7 +65,23 @@ form{
     top: 150px;
     left: 0;
 }
-/*homePriceInput, downPaymentInput, mortgageInterestRateInput, loanTypeInput*/
+
+.monthlyPaymentLbl{
+    top: 200px;
+    left: 0px;
+}
+
+.principalLbl{
+    top: 225px;
+    left: 100px;
+    font-size: 12px;
+}
+
+.interestLbl{
+    top: 250px;
+    left: 100px;
+    font-size: 12px;
+}
 
 .inpt{
     border: none;
@@ -73,6 +90,7 @@ form{
     position: absolute;
     width: 100px;
     background-color: transparent;
+    border-bottom: 2px solid rgb(236, 223, 179);
 }
 
 .inpt::placeholder{
@@ -82,10 +100,14 @@ form{
 
 .inpt:focus{
     outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(236, 223, 179);
 }
 
 .inpt:active{
     outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(236, 223, 179);
 }
 
 .homePriceInput{
@@ -103,6 +125,21 @@ form{
     left: 300px;
 }
 
+.monthlyPaymentInput{
+    top: 200px;
+    left: 300px;
+}
+
+.principalInput{
+    top: 225px;
+    left: 300px;
+}
+.interestInput{
+    top: 250px;
+    left: 300px;
+}
+
+/*//principalInput, interestInput, interestLbl, principalLbl*/
 .loanTypeSelection{
     position: absolute;
     background-color: transparent;
@@ -112,16 +149,13 @@ form{
     width: 100px;
     top: 150px;
     left: 300px;
+    border-bottom: 2px solid rgb(236, 223, 179);
 }
 
 .loanTypeSelection:hover{
     background-color: black;
 }
-/* 
-.loanTypeInput{
-    top: 150px;
-    left: 300px;
-} */
+ 
 
 .calculate{
     border: none;
@@ -155,8 +189,38 @@ form{
     background-color: rgb(0, 0, 245);
 }
 
-
-
 .calculate:hover{
     cursor: pointer;
 }
+
+.percentBar{
+    width: 100%;
+     height: 50px;
+    background-color: rgb(200, 200, 200);
+    height: 2px;
+     position: absolute;
+    bottom: 200px;
+}
+
+.percentInterest, .percentPrincipal{
+    width: 1%;
+    height: 2px;
+    position: absolute;
+    bottom: 200px;
+}
+
+.percentBox{
+    border: 2px solid rgb(236, 223, 179);
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    content: '';
+    position: absolute;
+    top: 325px;
+    left: 25px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+ 
