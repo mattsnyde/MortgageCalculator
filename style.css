@@ -23,7 +23,7 @@ body {
 form{
     background-color: rgb(22, 20, 36);
     width: 400px; 
-    height: 500px;
+    height: 600px;
  
     border: none;
     position: relative;
@@ -37,6 +37,26 @@ form{
     border-radius: 10px
 }
 
+.titleContainer{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    /* background-color: white; */
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid rgb(236, 223, 179);
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.titleContainer h1{
+    color: rgb(236, 223, 179);
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+}
+
 /*homePriceLbl, downPaymentLbl, mortgageInterestRateLbl, loanTypeLbl*/
 .lbl{
     color: rgb(236, 223, 179);
@@ -44,20 +64,30 @@ form{
     text-shadow: 2px 1px rgba(236, 223, 179, .4);
     letter-spacing: 1px;
     position: absolute;
+    margin-left: 10px;
 }
 
 .homePriceLbl{
-    top: 0;
-    left: 0;
-}
-
-.downPaymentLbl{
     top: 50px;
     left: 0;
 }
 
-.mortgageInterestRateLbl{
+.downPaymentLbl{
     top: 100px;
+    left: 0;
+}
+
+.homeInsuranceLbl{
+    top: 300px;
+    left: 0;
+}
+
+.propertyTaxLbl{
+    top: 250px;
+}
+
+.mortgageInterestRateLbl{
+    top: 200px;
     left: 0;
 }
 
@@ -67,20 +97,44 @@ form{
 }
 
 .monthlyPaymentLbl{
-    top: 200px;
-    left: 0px;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -59%);
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(236, 223, 179);
+    margin-left: 0;
 }
 
 .principalLbl{
-    top: 225px;
-    left: 100px;
+    top: 380px;
+    left: 10px;
     font-size: 12px;
+    color: rgb(126, 228, 126);
 }
 
 .interestLbl{
-    top: 250px;
-    left: 100px;
+    top: 430px;
+    left: 260px;
     font-size: 12px;
+    margin-left: 0;
+    color: #e9d30b;
+}
+
+.homeOwnerInsuranceLbl{
+    top: 480px;
+    left: 130px;
+    font-size: 12px;
+    margin-left: 0;
+    color: orange;
+}
+
+.homePropertyTaxLbl{
+    top: 370px;
+    left: 240px;
+    margin-left: 0;
+    font-size: 12px;
+    color: red;
 }
 
 .inpt{
@@ -91,6 +145,7 @@ form{
     width: 100px;
     background-color: transparent;
     border-bottom: 2px solid rgb(236, 223, 179);
+    margin-left: -10px;
 }
 
 .inpt::placeholder{
@@ -111,36 +166,56 @@ form{
 }
 
 .homePriceInput{
-    top: 0px;
-    left: 300px;
-}
-
-.downPaymentInput{
     top: 50px;
     left: 300px;
 }
 
-.mortgageInterestRateInput{
+.downPaymentInput{
     top: 100px;
     left: 300px;
 }
 
-.monthlyPaymentInput{
+.mortgageInterestRateInput{
     top: 200px;
     left: 300px;
 }
-
-.principalInput{
-    top: 225px;
-    left: 300px;
-}
-.interestInput{
+/*             homeInsuranceInput propertyTaxInput*/
+.propertyTaxInput{
     top: 250px;
     left: 300px;
 }
 
-/*//principalInput, interestInput, interestLbl, principalLbl*/
-.loanTypeSelection{
+.homeInsuranceInput{
+    top: 300px;
+    left: 300px;
+}
+
+ .homePropertyTaxInput{
+    top: 390px;
+    left: 260px;
+    margin-left: 0;
+    border-bottom:2px solid red;
+ }
+
+.principalInput{
+    top: 400px;
+    left: 55px;
+    border-bottom: 2px solid  rgb(126, 228, 126);
+}
+.interestInput{
+    top: 450px;
+    left: 290px;
+    border-bottom: 2px solid #e9d30b
+}
+
+ 
+.homeOwnerInsuranceInput{
+    top: 500px;
+    left: 170px;
+    border-bottom: 2px solid orange;
+}
+
+ .loanTypeSelection{
     position: absolute;
     background-color: transparent;
     font-size: 9px;
@@ -150,77 +225,131 @@ form{
     top: 150px;
     left: 300px;
     border-bottom: 2px solid rgb(236, 223, 179);
-}
+    outline: none;
+    margin-left: -10px;;
+ }
 
 .loanTypeSelection:hover{
     background-color: black;
 }
- 
 
 .calculate{
     border: none;
     background-color: transparent;
-    color: var(--main-text-color);
+    color:rgb(236, 223, 179);
     letter-spacing: 1px;
     position: relative;
     top: 95%;
     left: 50%;
     transform: translate(-50%, -95%);
-    mix-blend-mode: color;
-}
-
-.calculate::before{
-    top: -5px;
-    left: -5px;
-    position: absolute;
-    content: '';
-    height: 100%;
-    width: 100%;
-    background-color: rgb(219, 45, 45);
-}
-
-.calculate::after{
-    bottom: -5px;
-    right: -5px;
-    position: absolute;
-    content: '';
-    height: 100%;
-    width: 100%;
-    background-color: rgb(0, 0, 245);
+    transition: all 2s ease;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .calculate:hover{
     cursor: pointer;
+    background-color: black;
 }
-
-.percentBar{
-    width: 100%;
-     height: 50px;
-    background-color: rgb(200, 200, 200);
-    height: 2px;
-     position: absolute;
-    bottom: 200px;
-}
-
-.percentInterest, .percentPrincipal{
-    width: 1%;
-    height: 2px;
-    position: absolute;
-    bottom: 200px;
-}
-
-.percentBox{
-    border: 2px solid rgb(236, 223, 179);
-    width: 75px;
-    height: 75px;
-    background-color: transparent;
-    content: '';
-    position: absolute;
-    top: 325px;
-    left: 25px;
-    text-align: center;
-    color: white;
-    font-size: 14px;
-}
-
  
+ 
+
+
+
+
+
+
+
+
+
+
+/*The code below is the code for the circle and the code that allows me to change the color and the rotation of the sub circles*/
+.circular{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -75%)
+  }
+
+  .circular .inner, .circular .outer, .circular .circle{
+    position: absolute;
+    z-index: 6;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.8);
+  }
+  .circular .inner{ /*Background color of the div*/
+    top: 50%;
+    left: 50%;
+    height: 80px;
+    width: 80px;
+    margin: -40px 0 0 -40px;
+    background-color: rgb(22, 20, 36);
+    border-radius: 100%;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  }
+  .circular .circle{
+    z-index: 1;
+    background-color: red;    
+    box-shadow: none;
+  }
+  .circular .numb{ /*Number inside of the div itself*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(236, 223, 179);
+  }
+  .circular .bar{  /*The entire circle surrounding the inner circle*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: red;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+}
+
+  .circle .bar .progress{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+  }
+
+  .circle .bar .progress, .dot span{
+    background: #e9e50b;
+  }
+
+  .circle .progress{/*.left*/
+    z-index: 10;
+    transform: rotate(0deg);
+    background-color: rgb(13, 124, 19);
+  }
+
+  .circle .right  {
+    z-index: -1;
+    background-color: rgb(126, 228, 126);
+    transform: rotate(0deg);
+  }
+
+  /* .circle .bottom{
+      z-index: 20;
+      background-color: rgb(8, 255, 255);
+      transform: rotate(0deg)
+  }
+
+  .circle .top{
+      z-index: 20;
+      background-color: rgb(255, 8, 123);
+      transform: rotate(0deg)
+  } */

@@ -11,6 +11,7 @@
 <body>
     <div class="calc-container" id="calc-container">
         <form action="" id = 'form' class = 'form'>
+            <div class="titleContainer"><h1>Mortgage Calculator</h1></div>
             <label for="" class='lbl homePriceLbl' id='homePriceLbl'>Home Price</label>
             <input type="text" id = 'homePriceInput' class = 'inpt homePriceInput' placeholder = '$0'>
 
@@ -30,7 +31,7 @@
                 <option value="tenYears">10 years</option>
             </select>
             <label for="" id='monthlyPaymentLbl' class = 'lbl monthlyPaymentLbl'>Monthly Payment</label>
-            <input type="text" class = 'inpt monthlyPaymentInput' id='monthlyPaymentInput' placeholder = '$0' readonly>
+            <!-- <input type="text" class = 'inpt monthlyPaymentInput' id='monthlyPaymentInput' placeholder = '$0' readonly> -->
 
             <label for="" id="principalLbl" class="lbl principalLbl">Principal Amount...</label>
             <input type="text" class="inpt principalInput" id="principalInput" placeholder = '$0' readonly>
@@ -38,12 +39,43 @@
             <label for="" id="interestLbl" class="lbl interestLbl">Interest Amount...</label>
             <input type="text" class="inpt interestInput" id="interestInput" placeholder = '$0' readonly>
 
-            <button class="calculate" id="calculate">Calculate</button>
-            <div class="percentBar" id="percentBar"></div>
-            <div class="percentInterest" id="percentInterest"></div>
-            <div class="percentPrincipal" id="percentPrincipal"></div>
+            <label for="" id="homeInsuranceLbl" class="lbl homeInsuranceLbl">Home Insurance $/Yr</label>
+            <input type="text" class="inpt homeInsuranceInput" id="homeInsuranceInput" placeholder = '$0'  >
 
-            <div class="percentBox" id='percentBox'></div>
+            <label for="" id="propertyTaxLbl" class="lbl propertyTaxLbl">Property Tax $/Yr</label>
+            <input type="text" class="inpt propertyTaxInput" id="propertyTaxInput" placeholder = '$0'  >
+
+            <label for="" id="homeOwnerInsuranceLbl" class="lbl homeOwnerInsuranceLbl">Property Tax...</label>
+            <input type="text" class="inpt homeOwnerInsuranceInput" id="homeOwnerInsuranceInput" placeholder = '$0'  readonly>
+
+            <label for="" id="homePropertyTaxLbl" class="lbl homePropertyTaxLbl">Property Tax...</label>
+            <input type="text" class="inpt homePropertyTaxInput" id="homePropertyTaxInput" placeholder = '$0'  readonly>
+
+            <button class="calculate" id="calculate">Calculate</button>
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="outer"></div>
+                    <div class="numb">
+                       $0
+                    </div>
+                    <div class="circle">
+                       <div class="dot">
+                          <span></span>
+                       </div>
+                       <div class="bar left">
+                          <div class="progress"></div>
+                       </div>
+                       <div class="bar right">
+                          <div class="progress"></div>
+                       </div>
+                       <!-- <div class="bar top">
+                           <div class="progress"></div>
+                       </div>
+                       <div class="bar bottom">
+                           <div class="progress"></div>
+                       </div> -->
+                    </div>
+                 </div>
         </form>
     </div>
     <script src='script.js'></script>
