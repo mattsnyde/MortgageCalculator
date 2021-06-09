@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <title>Mortgage Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--Chart js script-->
 </head>
 <body>
     <div class="calc-container" id="calc-container">
@@ -22,7 +23,6 @@
             <input type="text" class="inpt mortgageInterestRateInput" id="mortgageInterestRateInput" placeholder = '0%'>
 
             <label for="" id="loanTypeLbl" class='lbl loanTypeLbl'>Loan Type</label>
-            <!-- <input type="text" class="inpt loanTypeInput" id="loanTypeInput" placeholder = '30 Year Fixed'> -->
             <select name="" id="loanTypeSelection" class = 'loanTypeSelection'>
                 <option value="default" selected>Please Select One</option>
                 <option value="thirtyYears">30 years</option>
@@ -31,8 +31,6 @@
                 <option value="tenYears">10 years</option>
             </select>
             <label for="" id='monthlyPaymentLbl' class = 'lbl monthlyPaymentLbl'>Monthly Payment</label>
-            <!-- <input type="text" class = 'inpt monthlyPaymentInput' id='monthlyPaymentInput' placeholder = '$0' readonly> -->
-
             <label for="" id="principalLbl" class="lbl principalLbl">Principal Amount...</label>
             <input type="text" class="inpt principalInput" id="principalInput" placeholder = '$0' readonly>
 
@@ -45,38 +43,41 @@
             <label for="" id="propertyTaxLbl" class="lbl propertyTaxLbl">Property Tax $/Yr</label>
             <input type="text" class="inpt propertyTaxInput" id="propertyTaxInput" placeholder = '$0'  >
 
-            <label for="" id="homeOwnerInsuranceLbl" class="lbl homeOwnerInsuranceLbl">Property Tax...</label>
+            <label for="" id="homeOwnerInsuranceLbl" class="lbl homeOwnerInsuranceLbl">Home Insurance...</label>
             <input type="text" class="inpt homeOwnerInsuranceInput" id="homeOwnerInsuranceInput" placeholder = '$0'  readonly>
 
             <label for="" id="homePropertyTaxLbl" class="lbl homePropertyTaxLbl">Property Tax...</label>
             <input type="text" class="inpt homePropertyTaxInput" id="homePropertyTaxInput" placeholder = '$0'  readonly>
 
             <button class="calculate" id="calculate">Calculate</button>
-                <div class="circular">
-                    <div class="inner"></div>
-                    <div class="outer"></div>
-                    <div class="numb">
-                       $0
-                    </div>
-                    <div class="circle">
-                       <div class="dot">
-                          <span></span>
-                       </div>
-                       <div class="bar left">
-                          <div class="progress"></div>
-                       </div>
-                       <div class="bar right">
-                          <div class="progress"></div>
-                       </div>
-                       <!-- <div class="bar top">
-                           <div class="progress"></div>
-                       </div>
-                       <div class="bar bottom">
-                           <div class="progress"></div>
-                       </div> -->
-                    </div>
-                 </div>
+            
+            <button class="btn" id="btn"><i class = 'fas fa-arrow-right'></i></button>
+ 
         </form>
+        <div class = 'chart-container'>
+            <canvas id="myChart"></canvas> <!--Need to have a canvas to create charts-->
+        </div>
+     </div>
+     <div class="form2">
+        <div class="title-container2"><h1>Your Quotes</h1></div>
+        <table class = 'tableInformation'>
+            <tr class = 'headers'>
+              <th>Home Price</th>
+              <th>Home DownPayment</th>
+              <th>Loan Type</th>
+              <th>Mortgage Interest Rate</th>
+              <th>Annual Property Tax</th>
+              <th>Annual Home Owner Insurance</th>
+              <th>Monthly Interest</th>
+              <th>Monthly Principal</th>
+              <th>Monthly Property Tax</th>
+              <th class='monthlyHomeInsurance'>Monthly Home Insurance</th>
+              <th>Combined Monthly Payment</th>
+              <th class = 'estimates'>Estimate #</th>
+            </tr>
+        </table>
+        <button class="btn2" id="btn2"><i class = 'fas fa-arrow-left'></i></button>
+        <button class="clearTbl" id="clearTbl">Clear Table</button>
     </div>
     <script src='script.js'></script>
 </body>

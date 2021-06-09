@@ -4,6 +4,7 @@
 :root{
   --main-background-color: #22253a;
   --main-text-color: rgb(104, 104, 104);
+  --main-color: rgb(236, 223, 179);
 }
 
 * {
@@ -20,7 +21,7 @@ body {
  justify-content: center;
 }
 
-form{
+form, .form2{
     background-color: rgb(22, 20, 36);
     width: 400px; 
     height: 600px;
@@ -31,41 +32,99 @@ form{
     border-radius: 10px;
 }
 
+form{
+    z-index: 200;
+}
 .calc-container{
     background-color: white;
     position: relative;
-    border-radius: 10px
+    border-radius: 10px;
+    z-index:200;
 }
 
-.titleContainer{
+.form2{
+    opacity: 0;
+    overflow: auto;
+    position: absolute;
+}
+
+.form2::-webkit-scrollbar{
+    width: 10px;
+}
+
+.form2::-webkit-scrollbar-track{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: var(--main-color);
+}
+
+.form2::-webkit-scrollbar-thumb{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+     background-color: transparent;
+    border: 2px solid black;
+}
+
+.btn{
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 380px
+}
+
+.btn2, .clearTbl{
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+    z-index: 100;
+    position: absolute;
+    top: 0px;
+    left: 40px
+}
+
+.clearTbl{
+    top: 20px;
+    left: 20px;
+}
+
+.btn2:hover, .clearTbl:hover{
+    cursor: pointer;
+}
+
+.titleContainer, .title-container2{
     position:  absolute;
     top: 0;
     left: 0;
-    /* background-color: white; */
-    width: 100%;
+     width: 100%;
     text-align: center;
-    border-bottom: 2px solid rgb(236, 223, 179);
+    border-bottom: 2px solid var(--main-color);
     background-color: transparent;
     margin: 0;
     padding: 0;
 }
 
-.titleContainer h1{
-    color: rgb(236, 223, 179);
+.titleContainer h1, .title-container2 h1{
+    color: var(--main-color);
     padding: 0;
     margin: 0;
     font-size: 30px;
 }
 
-/*homePriceLbl, downPaymentLbl, mortgageInterestRateLbl, loanTypeLbl*/
-.lbl{
-    color: rgb(236, 223, 179);
+.title-container2 h1{
+    width: 100%;
+    height: 100%
+}
+
+ .lbl{
+    color: var(--main-color);
     font-size: 15px;
     text-shadow: 2px 1px rgba(236, 223, 179, .4);
     letter-spacing: 1px;
     position: absolute;
-    margin-left: 10px;
-}
+ }
 
 .homePriceLbl{
     top: 50px;
@@ -100,42 +159,43 @@ form{
     top: 59%;
     left: 50%;
     transform: translate(-50%, -59%);
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
-    border-bottom: 2px solid rgb(236, 223, 179);
+    border-bottom: 2px solid var(--main-color);
     margin-left: 0;
+    width: 60%;
+    text-align: center;
 }
 
 .principalLbl{
     top: 380px;
-    left: 10px;
-    font-size: 12px;
-    color: rgb(126, 228, 126);
+     font-size: 11px;
+    color:  var(--main-color);
+    margin-left: 0;
 }
 
 .interestLbl{
-    top: 430px;
-    left: 260px;
-    font-size: 12px;
+    top: 480px;
+    left: 280px;
+    font-size: 11px;
     margin-left: 0;
     color: #e9d30b;
 }
 
 .homeOwnerInsuranceLbl{
     top: 480px;
-    left: 130px;
-    font-size: 12px;
+     font-size: 11px;
     margin-left: 0;
     color: orange;
 }
-
 .homePropertyTaxLbl{
-    top: 370px;
-    left: 240px;
+    top: 380px;
+    left: 280px;
     margin-left: 0;
-    font-size: 12px;
+    font-size: 11px;
     color: red;
 }
+
 
 .inpt{
     border: none;
@@ -144,7 +204,7 @@ form{
     position: absolute;
     width: 100px;
     background-color: transparent;
-    border-bottom: 2px solid rgb(236, 223, 179);
+    border-bottom: 2px solid  var(--main-color);
     margin-left: -10px;
 }
 
@@ -156,13 +216,13 @@ form{
 .inpt:focus{
     outline: none;
     border: none;
-    border-bottom: 2px solid rgb(236, 223, 179);
+    border-bottom: 2px solid  var(--main-color);
 }
 
 .inpt:active{
     outline: none;
     border: none;
-    border-bottom: 2px solid rgb(236, 223, 179);
+    border-bottom: 2px solid  var(--main-color);
 }
 
 .homePriceInput{
@@ -179,8 +239,7 @@ form{
     top: 200px;
     left: 300px;
 }
-/*             homeInsuranceInput propertyTaxInput*/
-.propertyTaxInput{
+ .propertyTaxInput{
     top: 250px;
     left: 300px;
 }
@@ -190,41 +249,40 @@ form{
     left: 300px;
 }
 
- .homePropertyTaxInput{
-    top: 390px;
-    left: 260px;
-    margin-left: 0;
+ .homePropertyTaxInput,  .homePropertyTaxInput:active, .homePropertyTaxInput:focus{
+    top: 400px;
+    left: 280px;
+    margin-left: 0px;
     border-bottom:2px solid red;
  }
 
-.principalInput{
+.principalInput, .principalInput:active, .principalInput:focus{
     top: 400px;
-    left: 55px;
+    left: 20px;
     border-bottom: 2px solid  rgb(126, 228, 126);
-}
-.interestInput{
-    top: 450px;
-    left: 290px;
-    border-bottom: 2px solid #e9d30b
-}
-
- 
-.homeOwnerInsuranceInput{
+ }
+.interestInput, .interestInput:focus, .interestInput:active{
     top: 500px;
-    left: 170px;
-    border-bottom: 2px solid orange;
+    left: 290px;
+    border-bottom: 2px solid #e9d30b;
 }
+ 
+.homeOwnerInsuranceInput, .homeOwnerInsuranceInput:active, .homeOwnerInsuranceInput:focus{
+    top: 500px;
+    left: 20px;
+    border-bottom: 2px solid orange;
+ }
 
  .loanTypeSelection{
     position: absolute;
     background-color: transparent;
     font-size: 9px;
     border: none;
-    color: rgb(236, 223, 179);
+    color:  var(--main-color);
     width: 100px;
     top: 150px;
     left: 300px;
-    border-bottom: 2px solid rgb(236, 223, 179);
+    border-bottom: 2px solid  var(--main-color);
     outline: none;
     margin-left: -10px;;
  }
@@ -236,14 +294,14 @@ form{
 .calculate{
     border: none;
     background-color: transparent;
-    color:rgb(236, 223, 179);
+    color: var(--main-color);
     letter-spacing: 1px;
     position: relative;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -95%);
+    top: 100%;
+    left: 53%;
+    transform: translate(-53%, -100%);
     transition: all 2s ease;
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
     border-radius: 10px;
 }
@@ -253,103 +311,76 @@ form{
     background-color: black;
 }
  
+  .chart-container{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -90%);
+      background-color: transparent;
+      z-index:200;
+  }
+
+
+table{
+    margin-top: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;;
+    margin-left: 40px;
+ }
+
+ table, th, td{
+     border: 1px solid white;
+     color:  var(--main-color);
+     text-align: center;
+     font-size: 10px;
+ }
  
-
-
-
-
-
-
-
-
-
-
-/*The code below is the code for the circle and the code that allows me to change the color and the rotation of the sub circles*/
-.circular{
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -75%)
-  }
-
-  .circular .inner, .circular .outer, .circular .circle{
-    position: absolute;
-    z-index: 6;
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    box-shadow: inset 0 1px 0 rgba(0,0,0,0.8);
-  }
-  .circular .inner{ /*Background color of the div*/
-    top: 50%;
-    left: 50%;
-    height: 80px;
-    width: 80px;
-    margin: -40px 0 0 -40px;
-    background-color: rgb(22, 20, 36);
-    border-radius: 100%;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
-  }
-  .circular .circle{
-    z-index: 1;
-    background-color: red;    
-    box-shadow: none;
-  }
-  .circular .numb{ /*Number inside of the div itself*/
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    font-size: 18px;
-    font-weight: 500;
-    color: rgb(236, 223, 179);
-  }
-  .circular .bar{  /*The entire circle surrounding the inner circle*/
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: red;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    clip: rect(0px, 100px, 100px, 50px);
+@media screen and (max-width: 375px){
+    .homeOwnerInsuranceInput, .principalInput{
+        margin-left: 0px;
+    }
+    .homeOwnerInsuranceLbl, .principalLbl{
+        margin-left: 13px;
+    }
+    .lbl{
+        margin-left: 15px;
+    }
+    .interestLbl, .homePropertyTaxLbl{
+        margin-left: 0px;
+    }
 }
 
-  .circle .bar .progress{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    clip: rect(0px, 50px, 100px, 0px);
-  }
+ @media screen and (max-width: 360px){
+    .chart-container{
+        width: 180px;
+        height: 200px;
+        top: 90%;
+        left: 53%;
+        transform: translate(-53%, -90%)
+    }
+    .lbl{
+        margin-left: 40px;
+    }
+    .interestLbl, .homePropertyTaxLbl{
+        margin-left: 0px;
+    }
 
-  .circle .bar .progress, .dot span{
-    background: #e9e50b;
-  }
+    .titleContainer h1, .title-container2 h1{
+        font-size: 20px;
+    }
+    .inpt, .lbl{
+        font-size: 10px;
+    }
+    .monthlyPaymentLbl{
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -60%);
+        margin-left: 0px;
+    }
+    .homeOwnerInsuranceInput, .principalInput{
+        margin-left: 20px;
+    }
 
-  .circle .progress{/*.left*/
-    z-index: 10;
-    transform: rotate(0deg);
-    background-color: rgb(13, 124, 19);
-  }
-
-  .circle .right  {
-    z-index: -1;
-    background-color: rgb(126, 228, 126);
-    transform: rotate(0deg);
-  }
-
-  /* .circle .bottom{
-      z-index: 20;
-      background-color: rgb(8, 255, 255);
-      transform: rotate(0deg)
-  }
-
-  .circle .top{
-      z-index: 20;
-      background-color: rgb(255, 8, 123);
-      transform: rotate(0deg)
-  } */
+ }
